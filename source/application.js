@@ -17,6 +17,7 @@ class Application extends Component {
 		super(props, ...args);
 
 		this.state = {
+			theme: 'black',
 			active: false,
 			usable: false,
 			firstLevel: Object.values(FIRST_LEVEL),
@@ -34,7 +35,23 @@ class Application extends Component {
 
 	render() {
 		return (
-			<div className="k-app">
+			<div className={['k-app', `k-app__m-${this.state.theme}`].join(' ')}>
+				<div className="k-app__theme-selector">
+					<button
+						className={['k-app__theme-selector__button', this.state.theme === 'black' && 'k-app__theme-selector__button__m-active'].filter(Boolean).join(' ')}
+						onClick={() => {
+							this.setState({theme: 'black'})
+						}}>
+						Black
+					</button>
+					<button
+						className={['k-app__theme-selector__button', this.state.theme === 'white' && 'k-app__theme-selector__button__m-active'].filter(Boolean).join(' ')}
+						onClick={() => {
+							this.setState({theme: 'white'})
+						}}>
+						White
+					</button>
+				</div>
 				<Player
 					onMouseEnter={() => {
 						this.setState({active: true})

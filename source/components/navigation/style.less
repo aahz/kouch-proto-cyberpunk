@@ -284,3 +284,121 @@
 		}
 	}
 }
+
+.k-app__m-white {
+	.k-app-navigation {
+		&__first-level {
+			&__item {
+				&:before,
+				&:after {
+					border-color: @k-color-black;
+				}
+
+				&__icon {
+					color: @k-color-white;
+				}
+
+				&__label {
+					background-color: fade(@k-color-white, 90%);
+
+					&__text {
+						color: @k-color-black;
+					}
+				}
+			}
+		}
+
+		&__second-level {
+			&__item {
+				background-color: @k-color-white;
+
+				&:before,
+				&:after {
+					border-color: @k-color-black;
+				}
+
+				&:hover,
+				&__m-active {
+					background-color: darken(@k-color-accent-primary, 5%);
+
+					.k-app-navigation {
+						&__second-level {
+							&__item {
+								&__icon {
+									color: @k-color-white;
+								}
+							}
+						}
+					}
+				}
+
+				&__label {
+					background-color: fade(@k-color-white, 80%);
+
+					&__text {
+						color: @k-color-black;
+					}
+				}
+			}
+		}
+	}
+}
+
+.k-app__m-black {
+	.k-app-navigation {
+		&__first-level {
+			&__item {
+				&:before,
+				&:after {
+					border-color: @k-color-white;
+				}
+
+				&__icon {
+					color: @k-color-black;
+				}
+
+				&__label {
+					background-color: fade(@k-color-black, 90%);
+
+					&__text {
+						color: @k-color-white;
+					}
+				}
+			}
+		}
+
+		&__second-level {
+			&__item {
+				background-color: @k-color-black;
+
+				&:before,
+				&:after {
+					border-color: @k-color-white;
+				}
+
+				&:hover,
+				&__m-active {
+					background-color: darken(@k-color-accent-primary, 5%);
+
+					.k-app-navigation {
+						&__second-level {
+							&__item {
+								&__icon {
+									color: @k-color-black;
+								}
+							}
+						}
+					}
+				}
+
+				&__label {
+					background-color: fade(@k-color-black, 80%);
+
+					&__text {
+						color: @k-color-white;
+					}
+				}
+			}
+		}
+	}
+}

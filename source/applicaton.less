@@ -18,3 +18,47 @@ body {
 	background: lighten(@k-color-black, 10%);
 	overflow: hidden;
 }
+
+.k-app {
+	&__theme-selector {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		margin-top: 20px;
+
+		&__button {
+			box-sizing: border-box;
+			border: 10px solid @k-color-white;
+			background: transparent;
+			color: @k-color-white;
+			font-size: 20px;
+			font-weight: 300;
+			text-transform: uppercase;
+			padding: 10px 20px;
+			margin-left: 10px;
+			transition: color .2s linear, background-color .2s linear, border .2s linear;
+			cursor: pointer;
+
+			&&__m-active {
+				border-color: @k-color-accent-primary;
+				background: @k-color-accent-primary;
+				color: @k-color-white;
+			}
+
+			&:first-child {
+				margin-left: 0px;
+			}
+
+			&:hover {
+				background: @k-color-white;
+				color: @k-color-black;
+			}
+
+			&:focus,
+			&:active {
+				outline: none;
+			}
+		}
+	}
+}

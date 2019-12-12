@@ -123,3 +123,59 @@
 		}
 	}
 }
+
+.k-app__m-white {
+	.k-app-panel {
+		background: linear-gradient(
+			90deg,
+			fade(@k-color-white, 60%) 0px,
+			fade(@k-color-white, 60%) 30px,
+			fade(@k-color-black, 90%) 30px,
+			fade(@k-color-black, 80%) 100%
+		);
+
+		&__header {
+			&__title {
+				&:after {
+					background: fade(@k-color-white, 20%);
+				}
+
+				&__image {
+					color: @k-color-white;
+				}
+
+				&__text {
+					color: @k-color-white;
+				}
+			}
+		}
+	}
+}
+
+.k-app__m-black {
+	.k-app-panel {
+		background: linear-gradient(
+			90deg,
+			fade(@k-color-black, 30%) 0px,
+			fade(@k-color-black, 30%) 30px,
+			fade(@k-color-black, 70%) 30px,
+			fade(@k-color-black, 70%) 100%
+		);
+
+		&__header {
+			&__title {
+				&:after {
+					background: fade(@k-color-black, 20%);
+				}
+
+				&__image {
+					color: @k-color-black;
+				}
+
+				&__text {
+					color: @k-color-black;
+				}
+			}
+		}
+	}
+}
