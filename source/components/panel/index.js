@@ -118,7 +118,7 @@ export default class Panel extends Component {
 					this._selectAnimation.add({
 						targets: this._refs.headerImage.current,
 						top: -80,
-						opacity: 1,
+						opacity: 0.3,
 					}, 0);
 
 					this._selectAnimation.play();

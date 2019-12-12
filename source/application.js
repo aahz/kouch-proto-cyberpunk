@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Player from './components/player';
 
+import Background from './components/background';
 import Logo from './components/logo';
 import Navigation from './components/navigation';
 import Panel from './components/panel';
@@ -48,6 +49,7 @@ class Application extends Component {
 					onMouseLeave={() => {
 						this.setState({active: false})
 					}}>
+					<Background active={this.state.active && this.state.usable} />
 					<Panel
 						active={this.state.active && this.state.usable && !!this.state.selection[1]}
 						selection={this.state.selection}
