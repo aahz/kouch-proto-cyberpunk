@@ -1,0 +1,79 @@
+@import '../../import';
+
+.k-app-panel {
+	position: absolute;
+	top: 120px;
+	left: 120px;
+	min-width: 700px;
+	min-height: 360px;
+	box-sizing: border-box;
+	padding: 10px 20px 20px 40px;
+	background: linear-gradient(
+		90deg,
+		fade(@k-color-white, 60%) 0px,
+		fade(@k-color-white, 60%) 30px,
+		fade(@k-color-black, 70%) 30px,
+		fade(@k-color-black, 70%) 100%
+	);
+
+	&__header {
+		&__title {
+			position: absolute;
+			top: -10px;
+			left: 80px;
+			right: -40px;
+			background: @k-color-accent-primary;
+
+			&:before {
+				content: '';
+				position: absolute;
+				display: block;
+				box-sizing: border-box;
+				top: 0px;
+				left: -40px;
+				bottom: 0px;
+				width: 40px;
+				border: 10px solid @k-color-accent-primary;
+			}
+
+			&:after {
+				content: '';
+				position: absolute;
+				display: block;
+				left: 10px;
+				right: 40px;
+				bottom: 10px;
+				height: 2px;
+				background: fade(@k-color-white, 20%);
+			}
+
+			&__image {
+				position: absolute;
+				opacity: 0.3;
+				top: 10px;
+				right: 50px;
+				bottom: 0px;
+				margin-top: -100px;
+				color: @k-color-white;
+				overflow: hidden;
+
+				& > svg {
+					width: 200px;
+					height: 200px;
+				}
+			}
+
+			&__text {
+				font-size: 32px;
+				line-height: 42px;
+				font-weight: 300;
+				text-transform: uppercase;
+				white-space: nowrap;
+				user-select: none;
+				cursor: default;
+				padding: 10px;
+				color: @k-color-white;
+			}
+		}
+	}
+}

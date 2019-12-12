@@ -1,0 +1,201 @@
+@import '../../import';
+
+.k-app-navigation {
+	position: absolute;
+	left: 20px;
+	bottom: 260px;
+
+	&__tip {
+		position: absolute;
+		right: 0px;
+		bottom: -20px;
+		color: @k-color-accent-primary;
+		border-top: 0px solid transparent;
+		border-right: 20px solid currentColor;
+		border-bottom: 20px solid transparent;
+		transform: translateY(10px);
+		opacity: 0.4;
+		z-index: 0;
+	}
+
+	&__first-level,
+	&__second-level {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: center;
+		z-index: 1;
+
+		&__item {
+			cursor: pointer;
+		}
+	}
+
+	&__first-level {
+		position: relative;
+		perspective: 100px;
+		z-index: 1;
+
+		&__item {
+			position: relative;
+			width: 70px;
+			height: 70px;
+			background-color: @k-color-accent-primary;
+			opacity: 0;
+			transform: rotateX(90deg) translateY(-20%);
+			transform-origin: bottom center;
+			will-change: opacity, transform;
+			transition: background-color .2s linear;
+
+			&:hover,
+			&&__m-active {
+				background-color: darken(@k-color-accent-primary, 5%);
+			}
+
+			&&__m-active {
+				.k-app-navigation {
+					&__first-level {
+						&__item {
+							&__label {
+								&__text {
+									&:first-letter {
+										color: @k-color-accent-primary;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&__icon {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: @k-color-white;
+				width: 70px;
+				height: 70px;
+
+				& > svg {
+					width: 40px;
+					height: 40px;
+				}
+			}
+
+			&__label {
+				position: absolute;
+				top: 0px;
+				left: 70px;
+				bottom: 0px;
+				background-color: fade(@k-color-white, 80%);
+				width: 0px;
+				overflow: hidden;
+				pointer-events: none;
+
+				&__text {
+					display: inline-block;
+					box-sizing: border-box;
+					padding: 0px 10px;
+					color: @k-color-black;
+					font-size: 32px;
+					font-weight: 300;
+					line-height: 70px;
+					vertical-align: middle;
+					white-space: nowrap;
+					text-transform: uppercase;
+					transition: color .1s linear;
+				}
+			}
+		}
+	}
+
+	&__second-level {
+		position: absolute;
+		left: 80px;
+		bottom: -20px;
+		perspective: 800px;
+		z-index: 0;
+
+		&__item {
+			width: 50px;
+			height: 50px;
+			background-color: @k-color-white;
+			transform-origin: right center;
+			will-change: opacity, transform;
+			transition: background-color .2s linear;
+
+			&:hover,
+			&&__m-active {
+				background-color: darken(@k-color-accent-primary, 10%);
+
+				.k-app-navigation {
+					&__second-level {
+						&__item {
+							&__icon {
+								color: @k-color-white;
+							}
+						}
+					}
+				}
+			}
+
+			&&__m-active {
+				.k-app-navigation {
+					&__second-level {
+						&__item {
+							&__label {
+								&__text {
+									&:first-letter {
+										color: @k-color-accent-primary;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&__icon {
+				position: relative;
+				color: @k-color-accent-primary;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 50px;
+				height: 50px;
+				transition: color .1s linear;
+
+				& > svg {
+					width: 25px;
+					height: 25px;
+				}
+			}
+
+			&__label {
+				position: absolute;
+				top: 0px;
+				left: 50px;
+				bottom: 0px;
+				background-color: fade(@k-color-white, 80%);
+				width: 0px;
+				overflow: hidden;
+				pointer-events: none;
+
+				&__text {
+					display: inline-block;
+					box-sizing: border-box;
+					padding: 0px 10px;
+					color: @k-color-black;
+					font-size: 28px;
+					font-weight: 300;
+					line-height: 50px;
+					vertical-align: middle;
+					white-space: nowrap;
+					text-transform: uppercase;
+					transition: color .1s linear;
+				}
+			}
+		}
+	}
+}
