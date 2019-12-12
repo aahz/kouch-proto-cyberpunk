@@ -23,5 +23,8 @@
   "author": "Andrei Ozdon <aahzzyy@gmail.com>",
   "keywords": [
     "kouch"
-  ]
+  ],
+  "engines": {
+    "node": "10.13.0"
+  }
 }
