@@ -8,7 +8,7 @@
 	&__tip {
 		position: absolute;
 		right: 0px;
-		bottom: -20px;
+		bottom: -19px;
 		color: @k-color-accent-primary;
 		border-top: 0px solid transparent;
 		border-right: 20px solid currentColor;
@@ -27,6 +27,7 @@
 		z-index: 1;
 
 		&__item {
+			user-select: none;
 			cursor: pointer;
 		}
 	}
@@ -47,9 +48,47 @@
 			will-change: opacity, transform;
 			transition: background-color .2s linear;
 
+			&:before,
+			&:after {
+				content: '';
+				position: absolute;
+				width: 10px;
+				height: 10px;
+				box-sizing: border-box;
+				border-color: @k-color-white;
+				border-style: dotted;
+				border-width: 0px;
+				opacity: 0;
+				transition: transform .2s linear, opacity .1s linear;
+			}
+
+			&:before {
+				top: 10px;
+				left: 10px;
+				border-top-width: 2px;
+				border-left-width: 2px;
+				transform: translate(20px, 20px);
+			}
+
+			&:after {
+				right: 10px;
+				bottom: 10px;
+				border-right-width: 2px;
+				border-bottom-width: 2px;
+				transform: translate(-20px, -20px);
+			}
+
 			&:hover,
 			&&__m-active {
 				background-color: darken(@k-color-accent-primary, 5%);
+			}
+
+			&:hover {
+				&:before,
+				&:after {
+					opacity: 1;
+					transform: translate(0px, 0px);
+				}
 			}
 
 			&&__m-active {
@@ -88,7 +127,7 @@
 				top: 0px;
 				left: 70px;
 				bottom: 0px;
-				background-color: fade(@k-color-white, 80%);
+				background-color: fade(@k-color-white, 90%);
 				width: 0px;
 				overflow: hidden;
 				pointer-events: none;
@@ -104,7 +143,10 @@
 					vertical-align: middle;
 					white-space: nowrap;
 					text-transform: uppercase;
-					transition: color .1s linear;
+
+					&:first-letter {
+						transition: color .2s linear;
+					}
 				}
 			}
 		}
@@ -123,7 +165,39 @@
 			background-color: @k-color-white;
 			transform-origin: right center;
 			will-change: opacity, transform;
+			opacity: 0;
+			transform: rotateY(90deg);
 			transition: background-color .2s linear;
+
+			&:before,
+			&:after {
+				content: '';
+				position: absolute;
+				width: 10px;
+				height: 10px;
+				box-sizing: border-box;
+				border-color: @k-color-white;
+				border-style: solid;
+				border-width: 0px;
+				opacity: 0;
+				transition: transform .2s linear, opacity .1s linear;
+			}
+
+			&:before {
+				top: 5px;
+				left: 5px;
+				border-top-width: 1px;
+				border-left-width: 1px;
+				transform: translate(20px, 20px);
+			}
+
+			&:after {
+				right: 5px;
+				bottom: 5px;
+				border-right-width: 1px;
+				border-bottom-width: 1px;
+				transform: translate(-20px, -20px);
+			}
 
 			&:hover,
 			&&__m-active {
@@ -137,6 +211,14 @@
 							}
 						}
 					}
+				}
+			}
+
+			&:hover {
+				&:before,
+				&:after {
+					opacity: 1;
+					transform: translate(0px, 0px);
 				}
 			}
 
@@ -164,7 +246,7 @@
 				align-items: center;
 				width: 50px;
 				height: 50px;
-				transition: color .1s linear;
+				transition: color .15s linear;
 
 				& > svg {
 					width: 25px;
@@ -193,7 +275,10 @@
 					vertical-align: middle;
 					white-space: nowrap;
 					text-transform: uppercase;
-					transition: color .1s linear;
+
+					&:first-letter {
+						transition: color .2s linear;
+					}
 				}
 			}
 		}

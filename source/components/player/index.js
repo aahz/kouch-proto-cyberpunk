@@ -58,8 +58,8 @@ export default class Player extends Component {
 		const y = clientY - box.top;
 
 		this.setState({
-			rotateX: mapValue(y, 0, 720, 2, -2),
-			rotateY: mapValue(x, 0, 1280, -1, 1),
+			rotateX: mapValue(y, 0, 720, 1, -1),
+			rotateY: mapValue(x, 0, 1280, -0.5, 0.5),
 		});
 
 		if (isFunction(this.props.onMouseMove)) {
@@ -75,7 +75,7 @@ export default class Player extends Component {
 				<div className="k-app-player__video">
 					<iframe
 						className="k-app-player__video__frame"
-						src="https://player.twitch.tv/?channel=dota2kouchtvtestacc"
+						src="https://player.twitch.tv/?channel=dota2kouchtvdemo"
 						width="1280"
 						height="720"
 						frameBorder="0"

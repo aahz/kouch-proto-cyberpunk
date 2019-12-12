@@ -721,6 +721,11 @@
   resolved "https://registry.yarnpkg.com/@iarna/toml/-/toml-2.2.3.tgz#f060bf6eaafae4d56a7dac618980838b0696e2ab"
   integrity sha512-FmuxfCuolpLl0AnQ2NHSzoUKWEJDFl63qXjzdoWBVyFCXzMGm1spBzk7LeHNoVCiWCF7mRVms9e6jEV9+MoPbg==
 
+"@kouch.tv/assets@^2.2.6":
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/@kouch.tv/assets/-/assets-2.2.6.tgz#c3cda729ceb1e05d483426a808e29f973c2a5e4a"
+  integrity sha512-Dkuu/EgXPajxlZHlbGq2lDw3L7aa9E/EKh1WpmLky5fDW9PxW37nQKfg3l7+kRH4D7q2AEpq6+ODhluW3IJMzg==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"

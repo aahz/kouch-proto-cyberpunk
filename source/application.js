@@ -39,7 +39,7 @@ class Application extends Component {
 						this.setState({active: true})
 					}}
 					onMouseMove={(x, y) => {
-						const usable = x < 1280 * 0.65;
+						const usable = x < 1280 * 0.7;
 
 						if (this.state.usable !== usable) {
 							this.setState({usable});
@@ -50,7 +50,8 @@ class Application extends Component {
 					}}>
 					<Panel
 						active={this.state.active && this.state.usable && !!this.state.selection[1]}
-						selection={this.state.selection[1]}/>
+						selection={this.state.selection}
+						onChangeSelection={this._onChangeSelection.bind(this)} />
 					<Navigation
 						activeFirst={this.state.active}
 						activeSecond={this.state.active && this.state.usable}

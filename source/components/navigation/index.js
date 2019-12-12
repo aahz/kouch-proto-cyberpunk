@@ -188,6 +188,7 @@ export default class Navigation extends Component {
 							return (length - (index + 1)) * 50;
 						},
 						easing: 'easeInQuad',
+						rotateY: [90, 0],
 						opacity: 1,
 					})
 				});
